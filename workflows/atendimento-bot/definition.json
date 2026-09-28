@@ -1,0 +1,168 @@
+{
+  "edges": [
+    {
+      "label": "next",
+      "source": "start",
+      "target": "menu"
+    },
+    {
+      "label": "next",
+      "source": "menu",
+      "target": "wait_choice"
+    },
+    {
+      "label": "next",
+      "source": "wait_choice",
+      "target": "route"
+    },
+    {
+      "label": "hours",
+      "source": "route",
+      "target": "reply_hours"
+    },
+    {
+      "label": "contact",
+      "source": "route",
+      "target": "reply_contact"
+    },
+    {
+      "label": "human",
+      "source": "route",
+      "target": "reply_human"
+    }
+  ],
+  "nodes": [
+    {
+      "data": {
+        "config": {},
+        "node_type": "start"
+      },
+      "id": "start",
+      "position": {
+        "x": 120,
+        "y": 80
+      },
+      "type": "flow-node"
+    },
+    {
+      "data": {
+        "config": {
+          "body_text": "Olá! Sou o assistente de atendimento. Como posso ajudar?",
+          "buttons": [
+            {
+              "id": "hours",
+              "title": "Horário"
+            },
+            {
+              "id": "contact",
+              "title": "Contato"
+            },
+            {
+              "id": "human",
+              "title": "Atendente"
+            }
+          ],
+          "interactive_type": "button",
+          "phone_number_id": "1283185134887856"
+        },
+        "node_type": "send_interactive"
+      },
+      "id": "menu",
+      "position": {
+        "x": 120,
+        "y": 260
+      },
+      "type": "flow-node"
+    },
+    {
+      "data": {
+        "config": {
+          "has_timeout": true,
+          "save_response_to": "button_choice",
+          "timeout_seconds": 300
+        },
+        "node_type": "wait_for_response"
+      },
+      "id": "wait_choice",
+      "position": {
+        "x": 120,
+        "y": 460
+      },
+      "type": "flow-node"
+    },
+    {
+      "data": {
+        "config": {
+          "conditions": [
+            {
+              "description": "Usuário pediu horário de atendimento",
+              "label": "hours"
+            },
+            {
+              "description": "Usuário pediu contato",
+              "label": "contact"
+            },
+            {
+              "description": "Usuário pediu um atendente",
+              "label": "human"
+            }
+          ],
+          "decision_type": "function",
+          "function_slug": "decidir-menu"
+        },
+        "node_type": "decide"
+      },
+      "id": "route",
+      "position": {
+        "x": 120,
+        "y": 660
+      },
+      "type": "flow-node"
+    },
+    {
+      "data": {
+        "config": {
+          "message": "Nosso horário de atendimento é de segunda a sexta, das 9h às 18h.",
+          "phone_number_id": "1283185134887856"
+        },
+        "node_type": "send_text"
+      },
+      "id": "reply_hours",
+      "position": {
+        "x": 0,
+        "y": 860
+      },
+      "type": "flow-node"
+    },
+    {
+      "data": {
+        "config": {
+          "message": "Você pode falar conosco por este WhatsApp. Se preferir e-mail, responda por aqui que um atendente te passa o contato.",
+          "phone_number_id": "1283185134887856"
+        },
+        "node_type": "send_text"
+      },
+      "id": "reply_contact",
+      "position": {
+        "x": 240,
+        "y": 860
+      },
+      "type": "flow-node"
+    },
+    {
+      "data": {
+        "config": {
+          "message": "Certo! Vou te encaminhar para um atendente. Em horário comercial, alguém te responde por aqui.",
+          "phone_number_id": "1283185134887856"
+        },
+        "node_type": "send_text"
+      },
+      "id": "reply_human",
+      "position": {
+        "x": 480,
+        "y": 860
+      },
+      "type": "flow-node"
+    }
+  ]
+}

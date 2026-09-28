@@ -1,0 +1,34 @@
+{
+  "functions": {
+    "decidir-menu": {
+      "files": {
+        "functions\\decidir-menu\\function.yaml": "c92f0f35bf43bdc93dfa1ee1711139ac1c8653542f4363ae4da96690378090e2",
+        "functions\\decidir-menu\\index.js": "cc6bab4219b5fb35dc2531e2de7c077f907ab70901089df2337c2d024e3cc740"
+      },
+      "id": "87fb2eb8-585e-472d-96b6-efdab1c81443",
+      "lastDeployedAt": "2026-09-28T10:04:29-03:00",
+      "lockVersion": 1,
+      "slug": "decidir-menu",
+      "status": "deployed",
+      "updatedAt": "2026-09-28T10:04:29-03:00"
+    }
+  },
+  "version": 1,
+  "workflows": {
+    "atendimento-bot": {
+      "files": {
+        "workflows\\atendimento-bot\\definition.json": "aec8a63accd74ecb2deff3ef683c31b6c1c6673a1c3e9edba12b4ee51640dbc6",
+        "workflows\\atendimento-bot\\workflow.yaml": "5721820c83b0bef250c434ea09aec2f54600a533028e94118f249e2a7beeacdb"
+      },
+      "id": "7d3e03e1-097a-488e-a93b-9b4a5a57e892",
+      "lockVersion": 2,
+      "slug": "atendimento-bot",
+      "sourceFile": {
+        "hash": "a756572aea092c8d275da9aab20ed0b249902495ddc19d26dc72d37e6b369b64",
+        "path": "workflows\\atendimento-bot\\workflow.js"
+      },
+      "status": "draft",
+      "updatedAt": "2026-09-28T10:04:31-03:00"
+    }
+  }
+}

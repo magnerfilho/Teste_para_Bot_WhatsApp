@@ -5,5 +5,8 @@
   "main": "api/webhook.js",
   "scripts": {
     "start": "node api/webhook.js"
+  },
+  "devDependencies": {
+    "@kapso/workflows": "^0.3.1"
   }
 }
